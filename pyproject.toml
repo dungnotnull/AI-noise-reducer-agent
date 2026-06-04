@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-noise-reducer-agent"
+version = "0.1.0"
+description = "AI Noise Reducer Agent - signal extraction and trust-scored knowledge pipeline"
+readme = "PROJECT-detail.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.111.0",
+  "uvicorn>=0.30.0",
+  "pydantic>=2.7.0",
+  "httpx>=0.27.0",
+  "trafilatura>=1.9.0",
+  "beautifulsoup4>=4.12.3",
+  "lxml>=5.2.2",
+  "numpy>=1.26.4",
+  "scikit-learn>=1.5.0",
+  "networkx>=3.3",
+  "qdrant-client>=1.9.1",
+  "neo4j>=5.20.0",
+  "psycopg[binary]>=3.1.19",
+  "sqlalchemy>=2.0.30",
+  "alembic>=1.13.1",
+  "python-dotenv>=1.0.1",
+  "orjson>=3.10.3",
+  "tenacity>=8.3.0",
+  "structlog>=24.2.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
