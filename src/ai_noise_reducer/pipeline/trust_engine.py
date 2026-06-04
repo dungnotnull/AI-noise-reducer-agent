@@ -34,4 +34,3 @@ class TrustScoreEngine:
         cites = [e for e in evidence if e.kind == "citation"]
         if not cites:
             return 10.0
-        return min(100.0, 40 + 60 * (sum(e.confidence for e in cites) / len(cites)))
